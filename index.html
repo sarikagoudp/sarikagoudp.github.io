@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aditya ❤️ Sarika — Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --peach: #f5c5a3;
+    --blush: #f2a8b8;
+    --ivory: #fdf6ee;
+    --lavender: #d9c8f0;
+    --gold: #c9a84c;
+    --gold-light: #e8d08a;
+    --rose: #e8899a;
+    --cream: #fef9f2;
+    --text-dark: #3a2a20;
+    --text-mid: #6b4c3b;
+    --text-soft: #9b7b6a;
+  }
+ 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+  html { scroll-behavior: smooth; }
+ 
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+ 
+  /* ── FLORAL SVG DECORATIONS ── */
+  .floral-corner {
+    position: absolute;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+ 
+  /* ═══════════════════════════════════════
+     HERO SECTION
+  ═══════════════════════════════════════ */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(160deg, #fde8d8 0%, #fdf0f5 40%, #ede3f7 80%, #fdf6e8 100%);
+  }
+ 
+  .hero-bg-petals {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+  }
+ 
+  .petal {
+    position: absolute;
+    border-radius: 50% 0 50% 0;
+    animation: floatPetal linear infinite;
+    opacity: 0;
+  }
+ 
+  @keyframes floatPetal {
+    0%   { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+    5%   { opacity: 0.7; }
+    90%  { opacity: 0.5; }
+    100% { transform: translateY(-15vh) rotate(720deg); opacity: 0; }
+  }
+ 
+  .hero-mandala {
+    position: absolute;
+    width: 680px;
+    height: 680px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.07;
+    animation: spinSlow 80s linear infinite;
+    z-index: 0;
+  }
+ 
+  @keyframes spinSlow {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+ 
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    animation: heroReveal 1.8s cubic-bezier(.16,1,.3,1) both;
+  }
+ 
+  @keyframes heroReveal {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+ 
+  .hero-tagline {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: clamp(0.65rem, 1.8vw, 0.85rem);
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.4rem;
+  }
+ 
+  .hero-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.8rem, 12vw, 8rem);
+    font-weight: 300;
+    line-height: 1;
+    color: var(--text-dark);
+    letter-spacing: -0.01em;
+  }
+ 
+  .hero-heart {
+    display: inline-block;
+    color: var(--rose);
+    font-size: 0.6em;
+    vertical-align: middle;
+    animation: heartbeat 2.4s ease-in-out infinite;
+    margin: 0 0.15em;
+  }
+ 
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    30%       { transform: scale(1.18); }
+    50%       { transform: scale(1.05); }
+  }
+ 
+  .hero-divider {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1.6rem auto;
+  }
+ 
+  .hero-poem {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.05rem, 2.8vw, 1.4rem);
+    color: var(--text-mid);
+    line-height: 1.75;
+    max-width: 520px;
+    margin: 0 auto 2.4rem;
+  }
+ 
+  .hero-date {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: clamp(0.7rem, 1.8vw, 0.88rem);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin-bottom: 2.4rem;
+  }
+ 
+  .cta-btn {
+    display: inline-block;
+    padding: 0.9rem 2.8rem;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 0.82rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 8px 30px rgba(201,168,76,0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+ 
+  .cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(201,168,76,0.5);
+  }
+ 
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--text-soft);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    animation: bounce 2s ease-in-out infinite;
+    z-index: 2;
+  }
+ 
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(8px); }
+  }
+ 
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+ 
+  /* ═══════════════════════════════════════
+     SECTION SHARED STYLES
+  ═══════════════════════════════════════ */
+  section {
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+  }
+ 
+  .section-label {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+ 
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 300;
+    color: var(--text-dark);
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+ 
+  .gold-rule {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1.4rem auto 2.8rem;
+  }
+ 
+  /* scroll-reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.15s; }
+  .reveal-delay-2 { transition-delay: 0.3s; }
+  .reveal-delay-3 { transition-delay: 0.45s; }
+ 
+  /* ═══════════════════════════════════════
+     INVITE / STORY SECTION
+  ═══════════════════════════════════════ */
+  #invite {
+    background: var(--ivory);
+  }
+ 
+  .invite-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+    line-height: 1.95;
+    color: var(--text-mid);
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+ 
+  .invite-body em {
+    color: var(--rose);
+    font-style: italic;
+  }
+ 
+  .invite-body strong {
+    color: var(--text-dark);
+    font-weight: 600;
+  }
+ 
+  .families {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+ 
+  .family-block {
+    text-align: center;
+  }
+ 
+  .family-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: block;
+  }
+ 
+  .family-parents {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.82rem;
+    color: var(--text-soft);
+    margin-top: 0.3rem;
+    line-height: 1.7;
+  }
+ 
+  .families-amp {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-style: italic;
+    color: var(--gold);
+    align-self: center;
+  }
+ 
+  /* ═══════════════════════════════════════
+     EVENTS SECTION
+  ═══════════════════════════════════════ */
+  #events {
+    background: linear-gradient(160deg, #fef0f5 0%, #f5eaff 50%, #fdf6e8 100%);
+  }
+ 
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+ 
+  .event-card {
+    position: relative;
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 24px;
+    padding: 2.6rem 2rem;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    overflow: hidden;
+  }
+ 
+  .event-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(245,197,163,0.12) 0%, rgba(217,200,240,0.12) 100%);
+    border-radius: 24px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+ 
+  .event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 24px 60px rgba(201,168,76,0.18), 0 8px 20px rgba(0,0,0,0.06);
+    border-color: rgba(201,168,76,0.5);
+  }
+ 
+  .event-card:hover::before { opacity: 1; }
+ 
+  .event-icon {
+    font-size: 2.6rem;
+    display: block;
+    margin-bottom: 1rem;
+    animation: floatIcon 3s ease-in-out infinite;
+  }
+ 
+  @keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-6px); }
+  }
+ 
+  .event-type {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+ 
+  .event-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1.2rem;
+  }
+ 
+  .event-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+  }
+ 
+  .event-detail-icon {
+    color: var(--rose);
+    font-size: 0.9rem;
+  }
+ 
+  .event-card-deco {
+    position: absolute;
+    bottom: -12px;
+    right: -12px;
+    width: 80px;
+    height: 80px;
+    opacity: 0.12;
+    pointer-events: none;
+  }
+ 
+  /* ═══════════════════════════════════════
+     VENUE SECTION
+  ═══════════════════════════════════════ */
+  #venue {
+    background: var(--ivory);
+  }
+ 
+  .venue-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+ 
+  .venue-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+    transition: transform 0.4s ease;
+  }
+ 
+  .venue-card:hover { transform: scale(1.03); }
+ 
+  .venue-visual {
+    height: 200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+ 
+  .venue-card:nth-child(1) .venue-visual {
+    background: linear-gradient(135deg, #f7c8b0 0%, #f5a8c0 100%);
+  }
+ 
+  .venue-card:nth-child(2) .venue-visual {
+    background: linear-gradient(135deg, #d9c8f0 0%, #c8e0f5 100%);
+  }
+ 
+  .venue-visual-icon {
+    font-size: 4rem;
+    opacity: 0.6;
+  }
+ 
+  .venue-visual-tag {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(8px);
+    padding: 0.3rem 0.9rem;
+    border-radius: 50px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+ 
+  .venue-info {
+    background: #fff;
+    padding: 1.6rem;
+  }
+ 
+  .venue-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+ 
+  .venue-addr {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.83rem;
+    color: var(--text-soft);
+    line-height: 1.7;
+  }
+ 
+  .venue-map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    padding: 0.5rem 1.2rem;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+ 
+  .venue-map-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(201,168,76,0.4);
+  }
+ 
+  /* ═══════════════════════════════════════
+     CLOSING SECTION
+  ═══════════════════════════════════════ */
+  #closing {
+    background: linear-gradient(160deg, #fde8d8 0%, #fdf0f5 50%, #ede3f7 100%);
+    text-align: center;
+  }
+ 
+  .closing-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 7rem 2rem;
+  }
+ 
+  .closing-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+ 
+  .closing-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+ 
+  .closing-sub {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.82rem;
+    letter-spacing: 0.2em;
+    color: var(--text-soft);
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+ 
+  .closing-cta {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: linear-gradient(135deg, #e8899a 0%, #d468a2 100%);
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 8px 30px rgba(212,104,162,0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+ 
+  .closing-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(212,104,162,0.5);
+  }
+ 
+  .footer-note {
+    margin-top: 3rem;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--text-soft);
+  }
+ 
+  /* floral border */
+  .floral-border-top,
+  .floral-border-bottom {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1;
+    margin: 1rem 0;
+    animation: sway 4s ease-in-out infinite;
+  }
+ 
+  .floral-border-bottom { animation-direction: reverse; }
+ 
+  @keyframes sway {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50%       { transform: scale(1.06) rotate(2deg); }
+  }
+ 
+  /* ── GOLD DIVIDER ── */
+  .section-flowers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin: 0 auto 1.4rem;
+    font-size: 1.2rem;
+    opacity: 0.6;
+  }
+ 
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .families { flex-direction: column; align-items: center; gap: 1.5rem; }
+    .families-amp { display: none; }
+    .hero-names { font-size: 3.2rem; }
+    .events-grid, .venue-cards { grid-template-columns: 1fr; }
+    .section-inner { padding: 4rem 1.4rem; }
+  }
+</style>
+</head>
+<body>
+ 
+<!-- ════════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section id="hero">
+ 
+  <!-- Floating petals -->
+  <div class="hero-bg-petals" id="petalsContainer"></div>
+ 
+  <!-- Mandala bg -->
+  <svg class="hero-mandala" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#c9a84c" stroke-width="0.8">
+      <circle cx="250" cy="250" r="240"/><circle cx="250" cy="250" r="200"/>
+      <circle cx="250" cy="250" r="160"/><circle cx="250" cy="250" r="120"/>
+      <circle cx="250" cy="250" r="80"/><circle cx="250" cy="250" r="40"/>
+      <line x1="10" y1="250" x2="490" y2="250"/>
+      <line x1="250" y1="10" x2="250" y2="490"/>
+      <line x1="80" y1="80" x2="420" y2="420"/>
+      <line x1="420" y1="80" x2="80" y2="420"/>
+      <line x1="10" y1="175" x2="490" y2="325"/>
+      <line x1="175" y1="10" x2="325" y2="490"/>
+      <line x1="10" y1="325" x2="490" y2="175"/>
+      <line x1="325" y1="10" x2="175" y2="490"/>
+      <!-- Petal shapes around center -->
+      <ellipse cx="250" cy="140" rx="18" ry="40" transform="rotate(0,250,250)"/>
+      <ellipse cx="250" cy="140" rx="18" ry="40" transform="rotate(30,250,250)"/>
+      <ellipse cx="250" cy="140" rx="18" ry="40" transform="rotate(60,250,250)"/>
+      <ellipse cx="250" cy="140" rx="18" ry="40" transform="rotate(90,250,250)"/>
+      <ellipse cx="250" cy="140" rx="18" ry="40" transform="rotate(120,250,250)"/>
+      <ellipse cx="250" cy="140" rx="18" ry="40" transform="rotate(150,250,250)"/>
+      <ellipse cx="250" cy="140" rx="18" ry="40" transform="rotate(180,250,250)"/>
+      <ellipse cx="250" cy="140" rx="18" ry="40" transform="rotate(210,250,250)"/>
+      <ellipse cx="250" cy="140" rx="18" ry="40" transform="rotate(240,250,250)"/>
+      <ellipse cx="250" cy="140" rx="18" ry="40" transform="rotate(270,250,250)"/>
+      <ellipse cx="250" cy="140" rx="18" ry="40" transform="rotate(300,250,250)"/>
+      <ellipse cx="250" cy="140" rx="18" ry="40" transform="rotate(330,250,250)"/>
+    </g>
+  </svg>
+ 
+  <!-- Floral corners -->
+  <svg class="floral-corner" style="top:-10px;left:-10px;width:220px;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.7">
+      <path d="M10,10 Q80,10 80,80 Q80,10 150,10" fill="rgba(245,197,163,0.25)"/>
+      <circle cx="40" cy="40" r="22" fill="rgba(242,168,184,0.3)" stroke="#e8899a"/>
+      <circle cx="80" cy="20" r="14" fill="rgba(217,200,240,0.35)" stroke="#c9a84c"/>
+      <circle cx="20" cy="80" r="14" fill="rgba(245,197,163,0.35)" stroke="#e8899a"/>
+      <circle cx="60" cy="60" r="8" fill="rgba(201,168,76,0.4)"/>
+      <path d="M30,10 Q10,30 10,60" stroke="#c9a84c" stroke-width="0.8"/>
+      <path d="M10,30 Q30,10 60,10" stroke="#e8899a" stroke-width="0.8"/>
+    </g>
+  </svg>
+ 
+  <svg class="floral-corner" style="top:-10px;right:-10px;width:220px;transform:scaleX(-1);" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.7">
+      <path d="M10,10 Q80,10 80,80 Q80,10 150,10" fill="rgba(245,197,163,0.25)"/>
+      <circle cx="40" cy="40" r="22" fill="rgba(242,168,184,0.3)" stroke="#e8899a"/>
+      <circle cx="80" cy="20" r="14" fill="rgba(217,200,240,0.35)" stroke="#c9a84c"/>
+      <circle cx="20" cy="80" r="14" fill="rgba(245,197,163,0.35)" stroke="#e8899a"/>
+      <circle cx="60" cy="60" r="8" fill="rgba(201,168,76,0.4)"/>
+    </g>
+  </svg>
+ 
+  <svg class="floral-corner" style="bottom:-10px;left:-10px;width:220px;transform:scaleY(-1);" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.7">
+      <path d="M10,10 Q80,10 80,80 Q80,10 150,10" fill="rgba(245,197,163,0.25)"/>
+      <circle cx="40" cy="40" r="22" fill="rgba(242,168,184,0.3)" stroke="#e8899a"/>
+      <circle cx="80" cy="20" r="14" fill="rgba(217,200,240,0.35)" stroke="#c9a84c"/>
+      <circle cx="20" cy="80" r="14" fill="rgba(245,197,163,0.35)" stroke="#e8899a"/>
+    </g>
+  </svg>
+ 
+  <svg class="floral-corner" style="bottom:-10px;right:-10px;width:220px;transform:scale(-1,-1);" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.7">
+      <path d="M10,10 Q80,10 80,80 Q80,10 150,10" fill="rgba(245,197,163,0.25)"/>
+      <circle cx="40" cy="40" r="22" fill="rgba(242,168,184,0.3)" stroke="#e8899a"/>
+      <circle cx="80" cy="20" r="14" fill="rgba(217,200,240,0.35)" stroke="#c9a84c"/>
+      <circle cx="20" cy="80" r="14" fill="rgba(245,197,163,0.35)" stroke="#e8899a"/>
+    </g>
+  </svg>
+ 
+  <div class="hero-content">
+    <span class="hero-tagline">Together Forever Begins</span>
+    <h1 class="hero-names">
+      Aditya <span class="hero-heart">❤️</span> Sarika
+    </h1>
+    <div class="hero-divider"></div>
+    <p class="hero-poem">
+      Two souls, one destiny —<br>
+      where every glance became a poem<br>
+      and every smile, a promise.
+    </p>
+      <a href="#invite" class="cta-btn">Celebrate With Us</a>
+  </div>
+ 
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+ 
+ 
+<!-- ════════════════════════════════════════
+     INVITE
+════════════════════════════════════════ -->
+<section id="invite">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">You Are Cordially Invited</span>
+      <h2 class="section-title">With Joy in Our Hearts</h2>
+      <div class="section-flowers">🌸 🌼 🌺</div>
+      <div class="gold-rule"></div>
+    </div>
+ 
+    <div class="invite-body reveal reveal-delay-1">
+      <p>
+        With immense love and blessings overflowing,<br>
+        the families of <strong>Aditya</strong> and <strong>Sarika</strong><br>
+        joyfully invite you<br>
+        to witness the sacred union of two hearts —<br><br>
+        <em>as they begin their most beautiful journey together,</em><br>
+        hand in hand, soul in soul.
+      </p>
+      <br>
+      <p>
+        Your presence, your laughter, your blessings<br>
+        are what will make this celebration truly unforgettable.<br><br>
+        <em>Because love is not just felt between two people —<br>
+        it is felt most when shared with those we cherish.</em>
+      </p>
+    </div>
+ 
+    <div class="families reveal reveal-delay-2">
+      <div class="family-block">
+        <span class="family-name">Aditya's Family</span>
+        <p class="family-parents">
+          S/o Shri Addanki Venkata Nageshwara Rao &amp; Smt. Uma<br>
+        </p>
+      </div>
+      <span class="families-amp">&amp;</span>
+      <div class="family-block">
+        <span class="family-name">Sarika's Family</span>
+        <p class="family-parents">
+          D/o Shri Palle Srinivas Goud &amp; Smt. Prabhavathi<br>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+ 
+<!-- ════════════════════════════════════════
+     EVENTS
+════════════════════════════════════════ -->
+<section id="events">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">Mark Your Calendar</span>
+      <h2 class="section-title">The Celebrations</h2>
+      <div class="section-flowers">💍 🪷 🪔</div>
+      <div class="gold-rule"></div>
+    </div>
+ 
+    <div class="events-grid">
+ 
+      <!-- Engagement card -->
+      <div class="event-card reveal reveal-delay-1">
+        <span class="event-icon">💍</span>
+        <p class="event-type">Function One</p>
+        <h3 class="event-name">Engagement</h3>
+        <div class="event-detail">
+          <span class="event-detail-icon">📅</span>
+          <span>Sunday, April 20, 2025</span>
+        </div>
+        <div class="event-detail">
+          <span class="event-detail-icon">🕐</span>
+          <span>11:30 AM onwards</span>
+        </div>
+        <!-- deco -->
+        <svg class="event-card-deco" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="38" fill="none" stroke="#c9a84c" stroke-width="1"/>
+          <circle cx="40" cy="40" r="28" fill="none" stroke="#e8899a" stroke-width="0.8"/>
+          <circle cx="40" cy="40" r="18" fill="rgba(201,168,76,0.3)"/>
+        </svg>
+      </div>
+ 
+      <!-- Wedding card -->
+      <div class="event-card reveal reveal-delay-2">
+        <span class="event-icon">🌸</span>
+        <p class="event-type">Function Two</p>
+        <h3 class="event-name">Wedding</h3>
+        <div class="event-detail">
+          <span class="event-detail-icon">📅</span>
+          <span>Tuesday, April 29, 2025</span>
+        </div>
+        <div class="event-detail">
+          <span class="event-detail-icon">🕐</span>
+          <span>10:19 AM — Shubh Muhurat</span>
+        </div>
+        <svg class="event-card-deco" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="38" fill="none" stroke="#e8899a" stroke-width="1"/>
+          <circle cx="40" cy="40" r="28" fill="none" stroke="#c9a84c" stroke-width="0.8"/>
+          <circle cx="40" cy="40" r="18" fill="rgba(232,137,154,0.3)"/>
+        </svg>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+ 
+<!-- ════════════════════════════════════════
+     VENUE
+════════════════════════════════════════ -->
+<section id="venue">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">Where Love Blossoms</span>
+      <h2 class="section-title">The Venues</h2>
+      <div class="section-flowers">🏛️ 🌿 ✨</div>
+      <div class="gold-rule"></div>
+    </div>
+ 
+    <div class="venue-cards">
+ 
+      <div class="venue-card reveal reveal-delay-1">
+        <div class="venue-visual">
+          <span class="venue-visual-tag">Engagement</span>
+          <span class="venue-visual-icon">🏛️</span>
+          <!-- decorative floral overlay -->
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.18;" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <circle cx="50" cy="50" r="60" fill="#e8899a"/>
+            <circle cx="350" cy="150" r="70" fill="#c9a84c"/>
+            <circle cx="200" cy="100" r="40" fill="#f2a8b8"/>
+          </svg>
+        </div>
+        <div class="venue-info">
+          <h3 class="venue-title">Moksh Banquet</h3>
+          <p class="venue-addr">
+            Tivoli Road, Secunderabad<br>
+            Telangana, India
+          </p>
+          <a href="https://maps.google.com/?q=Moksh+Banquet+Tivoli+Road+Secunderabad" target="_blank" class="venue-map-btn">
+            📍 View on Map
+          </a>
+        </div>
+      </div>
+ 
+      <div class="venue-card reveal reveal-delay-2">
+        <div class="venue-visual">
+          <span class="venue-visual-tag">Wedding</span>
+          <span class="venue-visual-icon">🌿</span>
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.18;" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <circle cx="80" cy="80" r="70" fill="#d9c8f0"/>
+            <circle cx="320" cy="120" r="60" fill="#c8e0f5"/>
+            <circle cx="200" cy="40" r="45" fill="#c9a84c"/>
+          </svg>
+        </div>
+        <div class="venue-info">
+          <h3 class="venue-title">Classic Gardens</h3>
+          <p class="venue-addr">
+            Balamrai, Secunderabad<br>
+            Telangana, India
+          </p>
+          <a href="https://maps.google.com/?q=Classic+Gardens+Balamrai+Secunderabad" target="_blank" class="venue-map-btn">
+            📍 View on Map
+          </a>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+ 
+<!-- ════════════════════════════════════════
+     CLOSING
+════════════════════════════════════════ -->
+<section id="closing">
+  <div class="closing-inner">
+    <div class="floral-border-top">🌸 🌺 🌷 🌺 🌸</div>
+ 
+    <div class="gold-rule reveal"></div>
+ 
+    <p class="closing-quote reveal reveal-delay-1">
+      "Every love story is beautiful,<br>
+      but ours is our favourite.<br>
+      Come, celebrate it with us —<br>
+      your presence is our greatest gift."
+    </p>
+ 
+    <p class="closing-names reveal reveal-delay-2">Aditya &amp; Sarika</p>
+ 
+    <a href="#events" class="closing-cta reveal reveal-delay-3">Join Us in Celebration</a>
+ 
+    <div class="gold-rule reveal" style="margin-top:3rem;"></div>
+    <div class="floral-border-bottom">🌸 🌺 🌷 🌺 🌸</div>
+ 
+    <p class="footer-note reveal">
+      With love from both our families &nbsp;🙏&nbsp; We look forward to celebrating with you
+    </p>
+  </div>
+</section>
+ 
+ 
+<script>
+  /* ── FLOATING PETALS ── */
+  const colors = ['#f5c5a3','#f2a8b8','#d9c8f0','#fde4cc','#e8d08a','#f5b8c8'];
+  const container = document.getElementById('petalsContainer');
+  const count = window.innerWidth < 600 ? 16 : 28;
+ 
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    const size = 8 + Math.random() * 14;
+    p.style.cssText = `
+      width:${size}px; height:${size * 0.65}px;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      left:${Math.random()*100}%;
+      animation-duration:${12 + Math.random()*18}s;
+      animation-delay:${Math.random()*14}s;
+      filter: blur(${Math.random()*1.5}px);
+    `;
+    container.appendChild(p);
+  }
+ 
+  /* ── SCROLL REVEAL ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.18 });
+ 
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+ 
+  /* ── PARALLAX on hero mandala ── */
+  const mandala = document.querySelector('.hero-mandala');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (mandala && y < window.innerHeight) {
+      mandala.style.transform = `translate(-50%, calc(-50% + ${y * 0.18}px))`;
+    }
+  }, { passive: true });
+</script>
+</body>
+</html>
