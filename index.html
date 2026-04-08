@@ -889,18 +889,52 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
-    #hero { flex-direction: column !important; min-height: auto; }
-    .hero-photo-panel { flex: 0 0 auto; width: 100%; height: 260px; }
+    /* Stack hero vertically */
+    #hero {
+      flex-direction: column !important;
+      min-height: auto !important;
+      height: auto !important;
+    }
+
+    /* Let each photo panel size itself by its image — NO fixed height */
+    .hero-photo-panel {
+      flex: 0 0 auto !important;
+      width: 100% !important;
+      height: auto !important;    /* removed fixed 260px — was cropping right photo */
+      overflow: visible !important;
+    }
+
+    /* Image fills full width, height is natural — zero cropping */
+    .hero-photo-panel img {
+      width: 100% !important;
+      height: auto !important;
+      object-fit: unset !important;   /* natural aspect ratio */
+      object-position: unset !important;
+      display: block;
+    }
+
+    /* Adjust gradients to run top→bottom on mobile */
     .hero-photo-panel.left::before {
-      background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(253,240,245,0.75) 100%);
+      background: linear-gradient(to bottom,
+        transparent 60%,
+        rgba(253,240,245,0.7) 100%) !important;
     }
     .hero-photo-panel.right::before {
-      background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(237,227,247,0.75) 100%);
+      background: linear-gradient(to bottom,
+        transparent 60%,
+        rgba(237,227,247,0.7) 100%) !important;
     }
-    .hero-center { flex: 0 0 auto; width: 100%; padding: 3rem 1.4rem; }
+
+    /* Center text block */
+    .hero-center {
+      flex: 0 0 auto !important;
+      width: 100% !important;
+      padding: 2.8rem 1.4rem !important;
+    }
+
     .scroll-hint { display: none; }
     .cd-unit { min-width: 46px; padding: 0.45rem 0.55rem 0.35rem; }
-    .cd-num { font-size: 1.25rem; }
+    .cd-num  { font-size: 1.25rem; }
   }
 
 </style>
