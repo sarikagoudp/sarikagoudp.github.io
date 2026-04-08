@@ -980,6 +980,22 @@
     .cd-num  { font-size: 1.25rem; }
   }
 
+
+
+/* ─────────────────────────────────────
+   MOBILE ONLY – CROP FIRST HERO IMAGE
+   (Sun → Shoes focus)
+   ───────────────────────────────────── */
+@media (max-width: 600px) {
+  .hero-photo-panel.left img {
+    height: 320px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+    display: block;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1236,7 +1252,7 @@
           </svg>
         </div>
         <div class="venue-info">
-          <h3 class="venue-title">Engagement - Moksh Banquet</h3>
+          <h3 class="venue-title">Moksh Banquet</h3>
           <p class="venue-addr">
             Tivoli Road, Secunderabad<br>
             Telangana, India
@@ -1258,7 +1274,7 @@
           </svg>
         </div>
         <div class="venue-info">
-          <h3 class="venue-title">Wedding - Classic Gardens</h3>
+          <h3 class="venue-title">Classic Gardens</h3>
           <p class="venue-addr">
             Balamrai, Secunderabad<br>
             Telangana, India
